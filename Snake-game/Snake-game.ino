@@ -1,7 +1,7 @@
 #include <LedControl.h> // Librería para controlar el MAX7219 (matriz 8x8)
 
 // Creamos el objeto para la matriz (DIN=12, CLK=11, CS=10, 1 pantalla)
-LedControl lc(12, 11, 10, 1);
+LedControl lc(9, 11, 10, 1);
 
 // Pines del joystick
 const int joyX = A0; // eje X
