@@ -6,28 +6,28 @@
 // ----------------------
 // Pines
 // ----------------------
-const int right = 3;
-const int down  = 4;
-const int up    = 5;
-const int left  = 6;
+const int right = 5; //3
+const int down  = 4;//4
+const int up    = 2;//5
+const int left  = 3;//6
 
 const int ledPin = 13;
 
 // ----------------------
 // Estado actual de los botones
 // ----------------------
-int buttonState_right = LOW;
-int buttonState_down  = LOW;
-int buttonState_up    = LOW;
-int buttonState_left  = LOW;
+int buttonState_right = HIGH;
+int buttonState_down  = HIGH;
+int buttonState_up    = HIGH;
+int buttonState_left  = HIGH;
 
 // ----------------------
 // Estado anterior de los botones
 // ----------------------
-int a_right = LOW;
-int a_down  = LOW;
-int a_up    = LOW;
-int a_left  = LOW;
+int a_right = HIGH;
+int a_down  = HIGH;
+int a_up    = HIGH;
+int a_left  = HIGH;
 
 void setup() {
 
@@ -40,10 +40,10 @@ void setup() {
   // Configuración de botones
   // Si usas resistencias externas de 10k, deja INPUT.
   // Si NO las usas, cambia INPUT por INPUT_PULLUP.
-  pinMode(right, INPUT);
-  pinMode(down, INPUT);
-  pinMode(up, INPUT);
-  pinMode(left, INPUT);
+  pinMode(right, INPUT_PULLUP);
+  pinMode(down, INPUT_PULLUP);
+  pinMode(up, INPUT_PULLUP);
+  pinMode(left, INPUT_PULLUP);
 }
 
 void loop() {
@@ -58,19 +58,19 @@ void loop() {
   // Detectar nueva pulsación
   // ----------------------
 
-  if (buttonState_right == HIGH && a_right == LOW) {
+  if (buttonState_right == LOW && a_right == HIGH) {
     Serial.println("Right");
   }
 
-  if (buttonState_down == HIGH && a_down == LOW) {
+  if (buttonState_down == LOW && a_down == HIGH) {
     Serial.println("Down");
   }
 
-  if (buttonState_up == HIGH && a_up == LOW) {
+  if (buttonState_up == LOW && a_up == HIGH) {
     Serial.println("Up");
   }
 
-  if (buttonState_left == HIGH && a_left == LOW) {
+  if (buttonState_left == LOW && a_left == HIGH) {
     Serial.println("Left");
   }
 
