@@ -11,10 +11,10 @@ LedControl lc(9, 11, 10, 1);
 // BOTONES
 // ======================================================
 
-const int right = 3;
+const int right = 5;
 const int down  = 4;
-const int up    = 5;
-const int left  = 6;
+const int up    = 2;
+const int left  = 3;
 
 
 // ======================================================
